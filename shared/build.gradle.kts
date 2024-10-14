@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 kotlin {
@@ -26,6 +27,9 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
